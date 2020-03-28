@@ -23,9 +23,8 @@ router.get("/settings", function(req, res, next) {
 });
 
 router.post("/settings", [
-  check("defaultDir").not().isEmpty(),
   body("defaultDir").custom(dirPath => {
-    if (!isValidDir(dirPath)) {
+    if (dirPath && !isValidDir(dirPath)) {
       throw new Error("Default directory is not valid")
     }
     return true
