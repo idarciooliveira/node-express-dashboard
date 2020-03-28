@@ -1,6 +1,6 @@
 $(document).ready(function(){
   
-  const currentPath = null;
+  let currentPath = null;
   const options = {
     "paging": false,
     "autoWidth": false,
